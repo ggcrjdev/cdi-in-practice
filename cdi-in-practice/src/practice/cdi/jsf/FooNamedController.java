@@ -1,7 +1,10 @@
 package practice.cdi.jsf;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+
+import practice.cdi.ejb.HelpEJBService;
 
 /**
  * <p>
@@ -19,9 +22,12 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class FooController {
+public class FooNamedController {
+
+    @Inject
+    HelpEJBService helpEJBService;
 
     public String displayWelcomeMessage() {
-        return "Welcome!";
+        return helpEJBService.displayWelcomeMessage();
     }
 }

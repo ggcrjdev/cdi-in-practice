@@ -26,4 +26,8 @@ public class HelpEJBService {
     public String ping() {
         return anotherHelpEJBService.ping();
     }
+
+    public String displayWelcomeMessage() {
+        return "Welcome!";
+    }
 }
